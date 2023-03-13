@@ -19,6 +19,13 @@ resource "google_storage_bucket_object" "picture" {
   source = "public/favicon.ico"
   bucket = "git-tera-gcp-site"
 }
+
+resource "google_storage_bucket_object" "default" {
+  name = "static"
+  source = "public/static"
+  content = "text/plain"
+  bucket = "git-tera-gcp-site"
+}
 resource "google_storage_bucket_object" "static" {
   name   = "index.html"
   source = "public/index.html"
