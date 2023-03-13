@@ -5,7 +5,7 @@ resource "google_storage_bucket" "auto-expire" {
 
   lifecycle_rule {
     condition {
-      age = 3
+      age = 5
     }
     action {
       type = "Delete"
