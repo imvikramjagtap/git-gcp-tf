@@ -20,7 +20,7 @@ resource "google_storage_bucket_object" "picture" {
   bucket = "git-tera-gcp-site"
 }
 
-resource "google_storage_bucket_object" "default" {
+resource "google_storage_bucket_object" "directory" {
   name = "static"
   source = "public/static"
   bucket = "git-tera-gcp-site"
