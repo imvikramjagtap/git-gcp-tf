@@ -23,7 +23,6 @@ resource "google_storage_bucket_object" "picture" {
 resource "google_storage_bucket_object" "default" {
   name = "static"
   source = "public/static"
-  content = "text/plain"
   bucket = "git-tera-gcp-site"
 }
 resource "google_storage_bucket_object" "static" {
