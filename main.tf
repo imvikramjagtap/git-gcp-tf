@@ -1,23 +1,18 @@
-resource "google_storage_bucket" "auto-expire" {
-  name          = "git-terra-gcp-bucket"
-  location      = "US"
+resource "google_storage_bucket" "static-site" {
+  name          = "git-tera-gcp-site"
+  location      = "EU"
   force_destroy = true
 
-  lifecycle_rule {
-    condition {
-      age = 5
-    }
-    action {
-      type = "Delete"
-    }
-  }
+  uniform_bucket_level_access = true
 
-  lifecycle_rule {
-    condition {
-      age = 1
-    }
-    action {
-      type = "AbortIncompleteMultipartUpload"
-    }
+  website {
+    main_page_suffix = "index.html"
+    not_found_page   = "404.html"
+  }
+  cors {
+    origin          = ["http://git-tera-gcp.com"]
+    method          = ["GET", "HEAD", "PUT", "POST", "DELETE"]
+    response_header = ["*"]
+    max_age_seconds = 3600
   }
 }
