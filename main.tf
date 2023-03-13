@@ -1,7 +1,6 @@
 resource "google_storage_bucket" "static-site" {
   name          = "git-tera-gcp-site"
   location      = "EU"
-  force_destroy = true
 
   website {
     main_page_suffix = "index.html"
