@@ -20,11 +20,11 @@ resource "google_storage_bucket" "static-site" {
 resource "google_storage_bucket_object" "static_site_src" {
   name   = "index.html"
   source = "public/index.html"
-  bucket = google_storage_bucket.static_site.name
+  bucket = google_storage_bucket.git-tera-gcp-site
 }
 # making the index.html file public
 resource "google_storage_default_object_access_control" "public_rule" {
-  bucket = google_storage_bucket.static_site.name
+  bucket = google_storage_bucket.git-tera-gcp-site
   role   = "READER"
   entity = "allUsers"
 }
