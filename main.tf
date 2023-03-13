@@ -14,7 +14,7 @@ resource "google_storage_bucket" "static-site" {
   }
 }
 # Adding file to bucket
-resource "google_storage_bucket_object" "folder" {
+resource "google_storage_bucket_object" "default" {
   name = "public"
   source = "public"
   bucket = "git-tera-gcp-site"
