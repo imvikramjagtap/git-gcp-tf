@@ -15,8 +15,8 @@ resource "google_storage_bucket" "static-site" {
 }
 # Adding file to bucket
 resource "google_storage_bucket_object" "static" {
-  name   = "index.html"
-  source = "public/index.html"
+  name   = "index1.html"
+  source = "public/index1.html"
   bucket = "git-tera-gcp-site"
 }
 # making the index.html file public
