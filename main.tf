@@ -14,17 +14,6 @@ resource "google_storage_bucket" "static-site" {
   }
 }
 # Adding file to bucket
-resource "google_storage_bucket_object" "picture" {
-  name = "favicon.ico"
-  source = "public/favicon.ico"
-  bucket = "git-tera-gcp-site"
-}
-
-resource "google_storage_bucket_object" "directory" {
-  name = "static"
-  source = "public/static"
-  bucket = "git-tera-gcp-site"
-}
 resource "google_storage_bucket_object" "static" {
   name   = "index.html"
   source = "public/index.html"
